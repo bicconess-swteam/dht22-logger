@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys, MySQLdb, Adafruit_DHT, datetime, time
 
 # We need to use Adafruit_DHT.DHT22
