@@ -19,3 +19,6 @@ if humidity is not None and temperature is not None:
     cur = db.cursor()
     cur.execute("INSERT INTO InformationTempHum(date, temperature, humidity) VALUES ('" + dt + "'," + str(temperature) + "," + str(humidity) + ")")
     db.commit()
+    cur.close()
+    del cur
+    db.close()
