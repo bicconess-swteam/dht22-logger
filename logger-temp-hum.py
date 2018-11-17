@@ -15,7 +15,7 @@ dt = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 # Note that sometimes you won't get a reading and
 # the results will be null (because Linux can't
 # guarantee the timing of calls to read the sensor).
-if humidity is not None and temperature is not None:
+if humidity is not None and humidity >= 0.0 and humidity <= 100.0 and temperature is not None and temperature > -100.0 and temperature < 150.0:
     cur = db.cursor()
     cur.execute("INSERT INTO InformationTempHum(date, temperature, humidity) VALUES ('" + dt + "'," + str(temperature) + "," + str(humidity) + ")")
     db.commit()
